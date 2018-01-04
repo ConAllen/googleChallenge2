@@ -1776,3 +1776,178 @@ for(var row = 0; row < numbers.length; row++ ) {
 }
 }
 console.log(numbers);
+
+
+
+
+
+
+
+///////////////////// objects ////////////////////////////////
+
+/*
+ * Programming Quiz: Umbrella (7-1)
+ */
+
+var umbrella = {
+    color: "pink",
+    isOpen: false,
+    open: function() {
+        if (umbrella.isOpen === true) {
+            return "The umbrella is already opened!";
+        } else {
+            umbrella.isOpen = true;
+            return "Julia opens the umbrella!";
+        }
+    },
+    isClose: true,
+    close: function () {
+        if (umbrella.isClose === true) {
+            return "The umbrella is already closed!";
+        }else {
+            umbrella.isClose = true;
+            umbrella.isOpen = false;
+            return "Con closes the umbrella";
+        }
+    },
+};
+console.log(umbrella);
+
+
+
+
+
+////////////////////////////////////////
+
+
+var sister = {
+  name: "Sarah",
+  age: 23,
+  parents: [ "alice", "andy" ],
+  siblings: ["julia"],
+  favoriteColor: "purple",
+  pets: true
+};
+
+// two equivalent ways to use the key to return its value
+sister["parents"] // returns [ "alice", "andy" ]
+sister.parents // also returns ["alice", "andy"]
+
+///////
+
+var sister = {
+  name: "Sarah",
+  age: 23,
+  parents: [ "alice", "andy" ],
+  siblings: ["julia"],
+  favoriteColor: "purple",
+  pets: true,
+  paintPicture: function() { return "Sarah paints!"; }
+};
+
+sister.paintPicture();
+
+
+
+var myObj = {
+  color: "orange",
+  shape: "sphere",
+  type: "food",
+  eat: function() { return "yummy" }
+};
+
+myObj.eat(); // method
+myObj.color; // property
+
+
+
+/*
+ * Programming Quiz: Menu Items (7-2)
+ */
+
+// your code goes here
+var breakfast = {
+    name: "The Lumberjack",
+    price: "$9.95",
+    ingredients:["eggs", "sausage", "toast", "hashbrowns", "pancakes"]
+
+};
+console.log(breakfast);
+
+
+
+
+/*
+ * Programming Quiz: Bank Accounts 1 (7-3)
+ */
+
+var savingsAccount = {
+    balance: 1000,
+    interestRatePercent: 1,
+    deposit: function addMoney(amount) {
+        if (amount > 0) {
+            savingsAccount.balance += amount;
+        }
+    },
+    withdraw: function removeMoney(amount) {
+        var verifyBalance = savingsAccount.balance - amount;
+        if (amount > 0 && verifyBalance >= 0) {
+            savingsAccount.balance -= amount;
+        }
+    },
+   printAccountSummary: function() { return "Welcome!\nYour balance is currently $" + savingsAccount.balance + " and your interest rate is " + savingsAccount.interestRatePercent + "%.";}
+
+};
+console.log(savingsAccount.printAccountSummary());
+
+
+
+/*
+ * Programming Quiz: Facebook Friends (7-5)
+
+
+
+
+Directions:
+Create an object called facebookProfile. The object should have 3 properties:
+
+your name
+the number of friends you have, and
+an array of messages you've posted (as strings)
+The object should also have 4 methods:
+
+postMessage(message) - adds a new message string to the array
+deleteMessage(index) - removes the message corresponding to the index provided
+addFriend() - increases the friend count by 1
+removeFriend() - decreases the friend count by 1
+ */
+
+// your code goes here
+
+var facebookProfile = {
+
+  name: "Con Allen",
+  friends: 1500,
+  messages: ["how are you getting on?", "whats up?", "I cant reach you"],
+
+  postMessage(message) {
+    facebookProfile.messages.push(message);
+  },
+
+  deleteMessage(index) {
+    facebookProfile.messages.splice(index,1);
+  },
+
+  addFriend() {
+    facebookProfile.friends += 1;
+  },
+
+  removeFriend() {
+      facebookProfile.friends =  facebookProfile.friends -1 ;
+  }
+
+
+
+};
+
+  console.log(facebookProfile.messages);
